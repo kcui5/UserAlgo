@@ -4,7 +4,7 @@
     "manifest_version": 3,
     "description": "Let users customize their own content recommendation algorithm on YouTube",
 
-    "permissions": ["storage", "scripting", "webNavigation"],
+    "permissions": ["storage", "scripting", "webNavigation", "activeTab", "tabs"],
     "host_permissions": ["https://www.youtube.com/*"],
 
     "background": {
