@@ -3,14 +3,16 @@
     "version": "1.0",
     "manifest_version": 3,
     "description": "Let users customize their own content recommendation algorithm on YouTube",
-    "permissions": ["storage", "scripting", "activeTab", "declarativeNetRequestWithHostAccess"],
+
+    "permissions": ["storage", "scripting", "webNavigation"],
     "host_permissions": ["https://www.youtube.com/*"],
+
     "background": {
       "service_worker": "background.js"
     },
     "action": {
-      "default_title": "YouTube Blocker",
-      "default_popup": "popup.html"
+      "default_title": "UserAlgo",
+      "default_popup": "popup/popup.html"
     }
   }
   
