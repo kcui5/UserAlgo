@@ -4,9 +4,11 @@
     "manifest_version": 3,
     "description": "Let users customize their own content recommendation algorithm on YouTube",
 
-    "permissions": ["storage", "scripting", "webNavigation", "activeTab", "tabs"],
-    "host_permissions": [],
-
+    "permissions": ["storage"],
+    "action": {
+      "default_title": "YouTube Blocker",
+      "default_popup": "popup/popup.html"
+    },
     "content_scripts": [
       {
         "matches": ["https://www.youtube.com/results*"],
