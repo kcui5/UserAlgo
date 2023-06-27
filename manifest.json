@@ -5,14 +5,15 @@
     "description": "Let users customize their own content recommendation algorithm on YouTube",
 
     "permissions": ["storage", "scripting", "webNavigation", "activeTab", "tabs"],
-    "host_permissions": ["https://www.youtube.com/*"],
+    "host_permissions": [],
 
-    "background": {
-      "service_worker": "background.js"
-    },
-    "action": {
-      "default_title": "UserAlgo",
-      "default_popup": "popup/popup.html"
-    }
-  }
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/results*"],
+        "run_at": "document_start",
+        "js": ["yt_modifier.js"],
+        "all_frames": true
+      }
+    ]
+}
   
