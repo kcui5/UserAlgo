@@ -5,10 +5,6 @@ const endTimeInput = document.getElementById("end-time");
 const clearButton = document.getElementById("clear");
 
 console.log("in popup");
-chrome.storage.sync.get('blockedKeywords', function(data) {
-  var blocked = data.blockedKeywords || [];
-  console.log(blocked);
-});
 
 saveButton.addEventListener("click", () => {
   const keyword = keywordInput.value;
@@ -17,7 +13,14 @@ saveButton.addEventListener("click", () => {
   console.log("clicked");
   // Retrieve the existing list from Chrome Sync Storage
   chrome.storage.sync.get('blockedKeywords', function(data) {
-    var blocked = data.blockedKeywords || [];
+    var blocked = data.blockedKeywords;
+    if (!blocked) {
+      chrome.storage.sync.set({'blockedKeywords' : []});
+    };
+  });
+
+  chrome.storage.sync.get('blockedKeywords', function(data) {
+    var blocked = data.blockedKeywords;
 
     // Add a new item to the list
     blocked.push({
@@ -27,7 +30,7 @@ saveButton.addEventListener("click", () => {
     });
 
     // Save the updated list back to Chrome Sync Storage
-    chrome.storage.sync.set({ blocked }, function() {
+    chrome.storage.sync.set({ blockedKeywords : blocked }, function() {
       console.log('Item added to the list');
     });
   });
