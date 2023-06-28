@@ -16,6 +16,10 @@
         "js": ["yt_modifier.js"],
         "all_frames": true
       }
-    ]
+    ],
+    "icons": {
+      "128": "icons/box 128.png",
+      "48": "icons/box 48.png"
+    }
 }
   
