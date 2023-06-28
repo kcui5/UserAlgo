@@ -5,4 +5,5 @@ Choose specific keywords to block from YouTube search results during a time inte
 Currently <Pending review> on Chrome Web Store
 In the meantime, clone this repository with
 > git clone https://github.com/kcui5/UserAlgo.git
+
 Then click <Manage Extensions> in Google Chrome. Click <Load unpacked> and select the cloned repository.
